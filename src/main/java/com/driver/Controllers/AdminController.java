@@ -1,6 +1,7 @@
-package com.driver.controllers;
-
-import com.driver.services.impl.AdminServiceImpl;
+package com.driver.Controllers;
+import com.driver.Services.impl.AdminServiceImpl;
+import com.driver.model.Admin;
+import com.driver.model.ServiceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,10 +14,10 @@ public class AdminController {
     AdminServiceImpl adminService;
 
     @PostMapping("/register")
-    public ResponseEntity<Void> registerAdmin(@RequestParam String username, @RequestParam String password){
+    public ResponseEntity<Admin> registerAdmin(@RequestParam String username, @RequestParam String password){
         //create an admin and return
         Admin admin = adminService.register(username, password);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(admin,HttpStatus.OK);
     }
 
     @PostMapping("/addProvider")

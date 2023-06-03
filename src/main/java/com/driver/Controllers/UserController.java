@@ -1,5 +1,7 @@
-package com.driver.controllers;
-import com.driver.services.impl.UserServiceImpl;
+package com.driver.Controllers;
+
+import com.driver.Services.impl.UserServiceImpl;
+import com.driver.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
